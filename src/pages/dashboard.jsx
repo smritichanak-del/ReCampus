@@ -14,14 +14,14 @@ function Dashboard() {
           setUser(currentUser);
         } else {
           // Allow viewing dashboard even without login (for demo purposes)
-          setUser({ displayName: "Guest User", email: "guest@campus.edu", photoURL: null });
+          setUser({ displayName: "Guest User", email: "re@campus.edu", photoURL: null });
         }
         setLoading(false);
       });
       return unsubscribe;
     } catch (error) {
       console.error("Auth error:", error);
-      setUser({ displayName: "Guest User", email: "guest@campus.edu", photoURL: null });
+      setUser({ displayName: "Guest User", email: "re@campus.edu", photoURL: null });
       setLoading(false);
     }
   }, []);
