@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     try {
-      const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
         if (currentUser) {
           setUser(currentUser);
         } else {
@@ -55,6 +55,13 @@ function Dashboard() {
     { icon: "🌍", label: "Waste Reduced", value: "500kg+", color: "from-teal-400 to-emerald-600", emoji: "waste" },
     { icon: "🤝", label: "Community Users", value: "5,200+", color: "from-purple-400 to-pink-600", emoji: "users" },
   ];
+
+  const activityStyles = {
+    blue: "border-blue-500 bg-gradient-to-r from-blue-50/50 to-transparent",
+    green: "border-green-500 bg-gradient-to-r from-emerald-50/50 to-transparent",
+    yellow: "border-yellow-500 bg-gradient-to-r from-yellow-50/50 to-transparent",
+    pink: "border-pink-500 bg-gradient-to-r from-pink-50/50 to-transparent",
+  };
 
   const activities = [
     { type: "Listed Item", title: "Physics Textbook", time: "2 hours ago", icon: "📚", color: "blue" },
@@ -131,7 +138,7 @@ function Dashboard() {
                 {activities.map((activity, idx) => (
                   <div
                     key={idx}
-                    className={`group p-5 rounded-xl border-l-4 border-${activity.color}-500 bg-gradient-to-r from-${activity.color}-50/50 to-transparent hover:shadow-lg hover:scale-102 transition-all duration-300 cursor-pointer`}
+                    className={`${activityStyles[activity.color]} group p-5 rounded-xl border-l-4 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer`}
                   >
                     <div className="flex items-center gap-4">
                       <div className="text-4xl group-hover:scale-125 transition-transform">{activity.icon}</div>

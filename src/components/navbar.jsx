@@ -1,25 +1,18 @@
-import { auth, provider } from "../firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
-import { useState } from "react";
+import { auth } from "../firebase";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const login = async () => {
-    try {
-      setLoading(true);
-      const res = await signInWithPopup(auth, provider);
-      setUser(res.user);
-    } catch (error) {
-      console.error("Login error:", error);
-      alert("Login failed: " + error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return unsubscribe;
+  }, []);
 
   const logout = async () => {
     try {
@@ -77,13 +70,11 @@ function Navbar() {
                 </button>
               </div>
             ) : (
-              <button
-                onClick={login}
-                disabled={loading}
-                className="bg-white/90 hover:bg-white text-green-600 px-6 py-2 rounded-lg font-semibold transition disabled:opacity-50 shadow-md hover:shadow-lg transform hover:scale-105"
-              >
-                {loading ? "Logging in..." : "Login"}
-              </button>
+              <Link to="/login">
+                <button className="bg-white/90 hover:bg-white text-green-600 px-6 py-2 rounded-lg font-semibold transition shadow-md hover:shadow-lg transform hover:scale-105">
+                  Login
+                </button>
+              </Link>
             )}
           </div>
         </div>

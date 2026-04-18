@@ -95,7 +95,7 @@ function AddItem({ refresh }) {
       {/* Image Upload */}
       <div className="mb-6">
         <label className="block text-sm font-semibold mb-3 text-gray-700">📸 Item Image *</label>
-        <div className="border-3 border-dashed border-green-300 rounded-2xl p-8 text-center hover:border-green-500 hover:bg-green-50 transition-all">
+        <div className="border-2 border-dashed border-green-300 rounded-2xl p-8 text-center hover:border-green-500 hover:bg-green-50 transition-all">
           {preview ? (
             <div>
               <img src={preview} alt="Preview" className="w-40 h-40 object-cover mx-auto rounded-xl shadow-lg mb-4" />

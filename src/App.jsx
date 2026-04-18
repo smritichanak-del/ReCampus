@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
+import Login from "./pages/login";
 import Marketplace from "./pages/marketplace";
 import Dashboard from "./pages/dashboard";
 import './App.css';
@@ -12,6 +13,7 @@ function App() {
       <main className="min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/market" element={<Marketplace />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>

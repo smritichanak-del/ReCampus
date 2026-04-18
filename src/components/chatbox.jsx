@@ -84,7 +84,7 @@ function ChatBox({ item }) {
       {/* Input Area */}
       <div className="border-t border-green-200 p-4 space-y-2">
         <textarea
-          className="input resize-none min-h-12 max-h-20"
+          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all resize-none min-h-[3rem] max-h-20 bg-white"
           placeholder="Type your message... (Shift+Enter for new line)"
           value={msg}
           onChange={(e) => setMsg(e.target.value)}

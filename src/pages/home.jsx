@@ -31,14 +31,14 @@ function Home() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
-          <Link to="/market">
+          <Link to="/login">
             <button className="btn-primary text-lg px-10 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
-              🛍️ Explore Marketplace
+              🔐 Campus Login
             </button>
           </Link>
-          <Link to="/dashboard">
+          <Link to="/market">
             <button className="btn-secondary text-lg px-10 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
-              📊 View Dashboard
+              🛍️ Explore Marketplace
             </button>
           </Link>
         </div>

@@ -4,10 +4,13 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_AUTH",
-  projectId: "YOUR_ID",
-  storageBucket: "YOUR_BUCKET",
+  apiKey: "AIzaSyBn2YNz0zHmUXBpg6kyuGLs5zaNyxv6kg4",
+  authDomain: "recampus-46bea.firebaseapp.com",
+  projectId: "recampus-46bea",
+  storageBucket: "recampus-46bea.firebasestorage.app",
+  messagingSenderId: "1034865368702",
+  appId: "1:1034865368702:web:9d0e2a7ca797e67231822f",
+  measurementId: "G-H85XPJY46F",
 };
 
 const app = initializeApp(firebaseConfig);
