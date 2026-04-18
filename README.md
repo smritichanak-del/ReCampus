@@ -1,8 +1,18 @@
-# React + Vite
+# ReCampus (Inter College Hackathon)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  The Circular Campus Economy
+Sustainability / Circular Economy / Mission LiFE
 
-Currently, two official plugins are available:
+## PROBLEM CONTEXT
+Every semester, Indian college campuses witness an enormous, invisible waste cycle. Graduating students throw away
+or abandon textbooks, lab coats, bicycles, calculators, lab equipment, furniture, electronics, and hostel supplies - while
+incoming juniors buy the exact same items brand new. Hostel dustbins overflow at end-of-semester. Local kabaadiwalas
+buy items for pennies and resell them at huge markups. Nobody captures the environmental or economic value sitting
+inside campus gates.
+This is happening on thousands of campuses simultaneously, yet no structured system exists to connect outgoing
+students with incoming ones. Trust issues, logistics, pricing, condition verification, and coordination across batches all
+stand in the way.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## THE CHALLENGE / TASK
+Reimagine how physical resources flow through a college campus across generations of students. The goal is to
+reduce waste, save students money, and build a circular mindset aligned with Mission LiFE.
